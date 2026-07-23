@@ -1,634 +1,981 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>HAB Transport Company LTD</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAB Transport Company LTD</title>
 
-<style>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,sans-serif;
-}
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
 
-body{
-    background:#f5f7fa;
-    color:#333;
-}
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-header{
-    background:linear-gradient(rgba(0,0,0,0.5),
-    rgba(0,0,0,0.5)),
-    url('https://images.unsplash.com/photo-1519003722824-194d4455a60c');
-    background-size:cover;
-    background-position:center;
-    height:80vh;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    color:white;
-}
-
-.hero h1{
-    font-size:70px;
-}
-
-.hero p{
-    font-size:24px;
-    margin-top:15px;
-}
-
-.hero button{
-    margin-top:25px;
-    padding:15px 35px;
-    font-size:18px;
-    border:none;
-    border-radius:8px;
-    background:#ff9800;
-    color:white;
-    cursor:pointer;
-}
-
-nav{
-    background:#003366;
-    padding:18px;
-    text-align:center;
-}
-
-nav a{
-    color:white;
-    text-decoration:none;
-    margin:0 20px;
-    font-weight:bold;
-    font-size:18px;
-}
-
-section{
-    padding:70px 10%;
-}
-
-h2{
-    text-align:center;
-    color:#003366;
-    font-size:40px;
-    margin-bottom:30px;
-}
-
-.about p{
-    font-size:20px;
-    line-height:1.8;
-    text-align:center;
-}
-
-.logo-bar{
-    background:white;
-    text-align:center;
-    padding:15px;
-}
-
-.logo-bar img{
-    max-height:100px;
-}
-
-.stats{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    flex-wrap:wrap;
-}
-
-.stat{
-    background:white;
-    padding:30px;
-    width:250px;
-    text-align:center;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
-}
-
-.stat h3{
-    color:#0056b3;
-    font-size:40px;
-}
-
-.services{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:25px;
-}
-
-.card{
-    background:white;
-    padding:30px;
-    border-radius:15px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
-}
-
-.card h3{
-    color:#0056b3;
-    margin-bottom:15px;
-}
-
-.fleet{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:20px;
-}
-
-.vehicle{
-    background:#003366;
-    color:white;
-    padding:30px;
-    text-align:center;
-    border-radius:15px;
-}
-
-.leadership{
-    background:#f8f9fa;
-}
-
-.team-grid{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    flex-wrap:wrap;
-}
-
-.team-card{
-    background:white;
-    width:350px;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
-}
-
-.team-card img{
-    width:100%;
-    height:380px;
-    object-fit:cover;
-}
-
-.team-card h3{
-    color:#003366;
-    text-align:center;
-    padding-top:20px;
-}
-
-.team-card h4{
-    color:#666;
-    text-align:center;
-    margin-bottom:15px;
-}
-
-.team-card p{
-    padding:20px;
-    text-align:center;
-    color:#333;
-    line-height:1.6;
-}
-
-.contact{
-    background:#003366;
-    color:white;
-    text-align:center;
-    border-radius:20px;
-}
-
-.contact h2{
-    color:white;
-}
-
-.contact p{
-    font-size:20px;
-    margin:15px 0;
-}
-
-footer{
-    background:#001f3f;
-    color:white;
-    text-align:center;
-    padding:25px;
-}
-
-.fleet-gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:30px;
-    margin-top:40px;
-}
-
-.fleet-card{
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 8px 20px rgba(0,0,0,.12);
-    transition:.3s;
-}
-
-.fleet-card:hover{
-    transform:translateY(-8px);
-}
-
-.fleet-card img{
-    width:100%;
-    height:250px;
-    object-fit:cover;
-}
-
-.fleet-card h3{
-    color:#003366;
-    text-align:center;
-    padding:20px 15px 10px;
-}
-
-.fleet-card p{
-    padding:0 20px 25px;
-    text-align:center;
-    line-height:1.7;
-    color:#555;
-}
-
-.partners-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-    margin-top:40px;
-}
-
-.partner-card{
-    background:white;
-    border-radius:15px;
-    padding:25px;
-    text-align:center;
-    box-shadow:0 8px 20px rgba(0,0,0,.1);
-    transition:.3s;
-}
-
-.partner-card:hover{
-    transform:translateY(-8px);
-}
-
-.partner-card img{
-    width:180px;
-    height:100px;
-    object-fit:contain;
-    margin-bottom:20px;
-}
-
-.partner-card h3{
-    color:#003366;
-    margin-bottom:10px;
-}
-
-.partner-card p{
-    color:#555;
-    line-height:1.6;
-}
-</style>
 </head>
+
 <body>
 
-<div class="logo-bar">
-    <img src="hab-logo.png" alt="HAB Transport Logo">
-</div>
+<!-- ================= NAVIGATION ================= -->
 
-<header>
-    <div class="hero">
-        <h1>HAB TRANSPORT COMPANY LTD</h1>
-        <p>Reliable Transport & Distribution Across Rwanda</p>
-        <button onclick="contactUs()">Contact Us Today</button>
+<header class="header">
+
+    <div class="logo">
+
+        <img src="hab-logo.png" alt="HAB Transport Logo">
+
+        <div class="logo-text">
+            <h2>HAB TRANSPORT</h2>
+            <span>Company LTD</span>
+        </div>
+
     </div>
+
+    <nav class="navbar" id="navbar">
+
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#fleet">Fleet</a>
+        <a href="#partners">Partners</a>
+        <a href="#leadership">Leadership</a>
+        <a href="#contact">Contact</a>
+
+    </nav>
+
+    <a href="#booking" class="book-btn">
+        <i class="fa-solid fa-truck-fast"></i>
+        Book a Truck
+    </a>
+
+    <div class="menu-btn" id="menu-btn">
+        <i class="fas fa-bars"></i>
+    </div>
+
 </header>
 
-<nav>
-    <a href="#about">About</a>
-    <a href="#vision">Vision & Mission</a>
-    <a href="#services">Services</a>
-    <a href="#fleet">Fleet</a>
-    <a href="#leadership">Leadership</a>
-    <a href="#contact">Contact</a>
-    <a href="#partners">Partners</a>
-</nav>
+<!-- ================ HERO ================= -->
 
-<section id="about" class="about">
-    <h2>About Us</h2>
+<section class="hero" id="home">
 
-    <p>
-        HAB Transport Company is a leading transport and logistics company
-        based in Kigali, Rwanda. We specialize in food distribution,
-        cargo transportation, logistics support and delivery services.
-        Our commitment to reliability, safety and customer satisfaction
-        has made us a trusted partner for businesses across Rwanda.
-    </p>
-</section>
-<section id="vision">
-    <h2>Our Vision & Mission</h2>
+    <div class="hero-overlay"></div>
 
-    <div class="services">
+    <div class="hero-content">
 
-        <div class="card">
-            <h3>Our Vision</h3>
-            <p>
-                To become Rwanda's most trusted transport and logistics company,
-                delivering reliable, efficient, innovative and customer-focused
-                transport solutions across Rwanda and the East African region.
-            </p>
-        </div>
+        <span class="welcome">
+            WELCOME TO HAB TRANSPORT COMPANY LTD
+        </span>
 
-        <div class="card">
-            <h3>Our Mission</h3>
-            <p>
-                To provide safe, reliable and efficient transport and logistics
-                services while exceeding customer expectations through
-                professionalism, integrity, innovation and continuous improvement.
-            </p>
-        </div>
+        <h1>
 
-    </div>
-</section>
+            Reliable Transport & Logistics Solutions
+            Across Rwanda
 
-<section>
+        </h1>
 
-    <div class="stats">
+        <p>
 
-        <div class="stat">
-            <h3>24/7</h3>
-            <p>Service Support</p>
-        </div>
+            HAB Transport Company LTD provides safe,
+            reliable and efficient transportation services
+            for food distribution, cargo logistics,
+            commercial deliveries and nationwide haulage.
 
-        <div class="stat">
-            <h3>100%</h3>
-            <p>Commitment</p>
-        </div>
+        </p>
 
-        <div class="stat">
-            <h3>Nationwide</h3>
-            <p>Coverage</p>
+        <div class="hero-buttons">
+
+            <a href="#booking" class="primary-btn">
+
+                <i class="fa-solid fa-truck"></i>
+
+                Book a Truck
+
+            </a>
+
+            <a href="#about" class="secondary-btn">
+
+                Learn More
+
+            </a>
+
         </div>
 
     </div>
 
 </section>
 
-<section id="services">
+<!-- ================== ABOUT ================= -->
 
-    <h2>Our Services</h2>
+<section class="about section" id="about">
 
-    <div class="services">
+<div class="section-title">
 
-        <div class="card">
-            <h3>Food Distribution</h3>
-            <p>Efficient distribution of food products to markets, retailers and businesses.</p>
-        </div>
+<span>WHO WE ARE</span>
 
-        <div class="card">
-            <h3>Cargo Transport</h3>
-            <p>Safe transportation of goods using modern trucks and lorries.</p>
-        </div>
+<h2>About HAB Transport Company LTD</h2>
 
-        <div class="card">
-            <h3>Bus Logistics</h3>
-            <p>Reliable passenger and logistics transport solutions.</p>
-        </div>
+<p>
 
-        <div class="card">
-            <h3>Motorbike Delivery</h3>
-            <p>Fast last-mile delivery for parcels and documents.</p>
-        </div>
+Providing dependable logistics solutions with
+professional drivers, modern vehicles and
+excellent customer service throughout Rwanda.
 
-    </div>
+</p>
 
-</section>
-
-<section id="fleet">
-
-    <h2>Our Fleet</h2>
-
-    <div class="fleet">
-
-        <div class="vehicle">
-            <h3>🚚 Trucks</h3>
-            <p>Heavy cargo transportation.</p>
-        </div>
-
-        <div class="vehicle">
-            <h3>🚛 Lorries</h3>
-            <p>Large-scale goods distribution.</p>
-        </div>
-
-        <div class="vehicle">
-            <h3>🚌 Buses</h3>
-            <p>Passenger and logistics support.</p>
-        </div>
-
-        <div class="vehicle">
-            <h3>🏍 Motorbikes</h3>
-            <p>Quick local deliveries.</p>
-        </div>
-
-    </div>
-
-</section>
-<section id="fleet-gallery">
-
-    <h2>Our Transport Fleet</h2>
-
-    <p style="text-align:center;font-size:20px;margin-bottom:40px;">
-        HAB Transport Company operates a modern and well-maintained fleet
-        capable of handling cargo transportation, food distribution,
-        container haulage and nationwide logistics services across Rwanda.
-    </p>
-
-    <div class="fleet-gallery">
-
-        <div class="fleet-card">
-            <img src="truck1.jpg" alt="Mercedes Curtain-Side Truck">
-
-            <h3>Mercedes-Benz Curtain-Side Truck</h3>
-
-            <p>
-                Designed for secure transportation of packaged goods,
-                food products and commercial cargo while protecting
-                loads from weather conditions.
-            </p>
-        </div>
-
-        <div class="fleet-card">
-            <img src="truck2.jpg" alt="Mercedes Box Truck">
-
-            <h3>Mercedes-Benz Box Truck</h3>
-
-            <p>
-                Ideal for bulk deliveries and long-distance transport.
-                Built for reliability, efficiency and safe cargo handling.
-            </p>
-        </div>
-
-        <div class="fleet-card">
-            <img src="truck3.jpg" alt="Mercedes Box Truck">
-
-            <h3>Mercedes-Benz Distribution Truck</h3>
-
-            <p>
-                Used for nationwide deliveries, logistics support and
-                commercial transportation with dependable performance.
-            </p>
-        </div>
-
-        <div class="fleet-card">
-            <img src="truck4.jpg" alt="Cage Truck">
-
-            <h3>Light Duty Cage Truck</h3>
-
-            <p>
-                Suitable for transporting agricultural products,
-                equipment, furniture and lightweight commercial goods.
-            </p>
-        </div>
-
-        <div class="fleet-card">
-            <img src="truck5.jpg" alt="Container Trailer">
-
-            <h3>Mercedes-Benz Container Trailer</h3>
-
-            <p>
-                Heavy-duty articulated truck designed for container
-                transport, large cargo volumes and regional logistics.
-            </p>
-        </div>
-
-    </div>
-
-</section>
-
-<section id="partners">
-
-    <h2>Our Trusted Partners</h2>
-
-    <p style="text-align:center;font-size:20px;margin-bottom:40px;">
-        HAB Transport Company LTD is proud to work alongside trusted organizations
-        that share our commitment to quality, reliability and excellent customer service.
-        Together, we deliver efficient transport and logistics solutions across Rwanda.
-    </p>
-
-    <div class="partners-grid">
-
-        <div class="partner-card">
-            <img src="kasha.png" alt="Kasha Rwanda">
-            <h3>Kasha Rwanda</h3>
-            <p>Supporting reliable nationwide distribution and logistics services.</p>
-        </div>
-        
-        <div class="partner-card">
-    <img src="bralirwa.png" alt="Bralirwa Rwanda">
-    <h3>Bralirwa PLC</h3>
-    <p>
-        Proud to support the transportation and distribution of beverages
-        and related products through reliable and efficient logistics services.
-    </p>
 </div>
 
-        <div class="partner-card">
-            <img src="volkswagen.png" alt="Volkswagen Rwanda">
-            <h3>Volkswagen Rwanda</h3>
-            <p>Working together to promote dependable mobility and transport solutions.</p>
-        </div>
+<div class="about-container">
 
-        <div class="partner-card">
-    <img src="avipro.png" alt="Avipro Rwanda">
-    <h3>Avipro Rwanda</h3>
-    <p>
-        Partnering to support the reliable transportation and distribution
-        of poultry products, animal feed and agricultural supplies across Rwanda
-        through safe, efficient and dependable logistics services.
-    </p>
+<div class="about-image">
+
+<img src="truck1.jpg" alt="HAB Transport Truck">
+
 </div>
 
-        <div class="partner-card">
-            <img src="crystal-rentals.png" alt="Crystal Rentals Rwanda">
-            <h3>Crystal Rentals Rwanda</h3>
-            <p>Providing complementary transport and vehicle support services.</p>
+<div class="about-content">
+
+<h3>
+
+Your Trusted Logistics Partner
+
+</h3>
+
+<p>
+
+HAB Transport Company LTD is a leading transport
+and logistics company based in Kigali, Rwanda.
+We specialize in transporting food products,
+commercial cargo, construction materials,
+industrial equipment and other valuable goods
+safely across the country.
+
+</p>
+
+<p>
+
+Our experienced team focuses on reliability,
+timely deliveries and customer satisfaction.
+Whether you need a single delivery or ongoing
+transport services, HAB Transport delivers
+professional logistics solutions you can trust.
+
+</p>
+
+<div class="about-features">
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+<div>
+
+<h4>Reliable Service</h4>
+
+<p>On-time deliveries with professional drivers.</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+<div>
+
+<h4>Nationwide Coverage</h4>
+
+<p>Transport services throughout Rwanda.</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+<div>
+
+<h4>Modern Fleet</h4>
+
+<p>Maintained trucks for safe transportation.</p>
+
+</div>
+
+</div>
+
+<div class="feature">
+
+<i class="fas fa-check-circle"></i>
+
+<div>
+
+<h4>24/7 Customer Support</h4>
+
+<p>Always available whenever you need us.</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================== STATS ================= -->
+
+<section class="stats">
+
+<div class="stat-card">
+
+<h2>24/7</h2>
+
+<p>Customer Support</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>100%</h2>
+
+<p>Commitment to Quality</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>Nationwide</h2>
+
+<p>Coverage Across Rwanda</p>
+
+</div>
+
+<div class="stat-card">
+
+<h2>Fast</h2>
+
+<p>Reliable Deliveries</p>
+
+</div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section class="services section" id="services">
+
+<div class="section-title">
+
+<span>WHAT WE DO</span>
+
+<h2>Our Professional Services</h2>
+
+<p>
+
+We offer comprehensive transport and logistics
+services designed to meet the needs of businesses
+and individuals throughout Rwanda.
+
+</p>
+
+</div>
+
+<div class="services-grid">
+
+<div class="service-card">
+
+<i class="fas fa-truck-moving"></i>
+
+<h3>Cargo Transport</h3>
+
+<p>
+
+Secure transportation of commercial cargo,
+industrial equipment and business goods.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fas fa-boxes-stacked"></i>
+
+<h3>Food Distribution</h3>
+
+<p>
+
+Reliable nationwide distribution of food
+products to retailers and businesses.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fas fa-warehouse"></i>
+
+<h3>Logistics Solutions</h3>
+
+<p>
+
+Professional logistics planning and
+efficient transport coordination.
+
+</p>
+
+</div>
+
+<div class="service-card">
+
+<i class="fas fa-road"></i>
+
+<h3>Long Distance Haulage</h3>
+
+<p>
+
+Safe transportation across Rwanda
+using modern heavy-duty trucks.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+ 
+<!-- ================= FLEET ================= -->
+
+<section class="fleet section" id="fleet">
+
+<div class="section-title">
+
+<span>OUR FLEET</span>
+
+<h2>Modern Transport Fleet</h2>
+
+<p>
+
+Our fleet consists of well-maintained trucks designed
+to transport cargo safely, efficiently and on time
+throughout Rwanda.
+
+</p>
+
+</div>
+
+<div class="fleet-grid">
+
+<div class="fleet-card">
+
+<img src="truck1.jpg" alt="Mercedes Curtain Side Truck">
+
+<div class="fleet-info">
+
+<h3>Mercedes Curtain Side Truck</h3>
+
+<p>
+
+Ideal for transporting packaged goods,
+food products and commercial cargo while
+protecting goods from weather conditions.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="fleet-card">
+
+<img src="truck2.jpg" alt="Mercedes Box Truck">
+
+<div class="fleet-info">
+
+<h3>Mercedes Box Truck</h3>
+
+<p>
+
+Reliable closed-body transport suitable
+for long-distance commercial deliveries.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="fleet-card">
+
+<img src="truck3.jpg" alt="Distribution Truck">
+
+<div class="fleet-info">
+
+<h3>Distribution Truck</h3>
+
+<p>
+
+Designed for nationwide logistics,
+distribution and commercial transportation.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="fleet-card">
+
+<img src="truck4.jpg" alt="Light Duty Truck">
+
+<div class="fleet-info">
+
+<h3>Light Duty Truck</h3>
+
+<p>
+
+Perfect for furniture, agricultural
+products and medium-sized deliveries.
+
+</p>
+
+</div>
+
+</div>
+
+<div class="fleet-card">
+
+<img src="truck5.jpg" alt="Container Trailer">
+
+<div class="fleet-info">
+
+<h3>Container Trailer</h3>
+
+<p>
+
+Heavy-duty articulated truck built for
+container transport and regional logistics.
+
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PARTNERS ================= -->
+
+<section class="partners section" id="partners">
+
+<div class="section-title">
+
+<span>OUR PARTNERS</span>
+
+<h2>Trusted Business Partners</h2>
+
+<p>
+
+HAB Transport Company LTD proudly works with
+leading organizations across Rwanda to deliver
+safe, reliable and professional logistics services.
+
+</p>
+
+</div>
+
+<div class="partners-grid">
+
+<div class="partner-card">
+
+<img src="kasha.png" alt="Kasha Rwanda">
+
+<h3>Kasha Rwanda</h3>
+
+<p>
+
+Nationwide logistics and distribution support.
+
+</p>
+
+</div>
+
+<div class="partner-card">
+
+<img src="bralirwa.png" alt="Bralirwa">
+
+<h3>Bralirwa PLC</h3>
+
+<p>
+
+Supporting beverage transportation
+through dependable logistics.
+
+</p>
+
+</div>
+
+<div class="partner-card">
+
+<img src="volkswagen.png" alt="Volkswagen">
+
+<h3>Volkswagen Rwanda</h3>
+
+<p>
+
+Reliable mobility and transport solutions.
+
+</p>
+
+</div>
+
+<div class="partner-card">
+
+<img src="avipro.png" alt="Avipro">
+
+<h3>Avipro Rwanda</h3>
+
+<p>
+
+Safe transportation of agricultural
+and poultry products across Rwanda.
+
+</p>
+
+</div>
+
+<div class="partner-card">
+
+<img src="crystal-rentals.png" alt="Crystal Rentals">
+
+<h3>Crystal Rentals</h3>
+
+<p>
+
+Professional vehicle and transport support.
+
+</p>
+
+</div>
+
+<div class="partner-card">
+
+<img src="vava-tours.png" alt="Vava Tours">
+
+<h3>Vava Tours</h3>
+
+<p>
+
+Travel and transport partnership
+throughout Rwanda.
+
+</p>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LEADERSHIP ================= -->
+
+<section class="leadership section" id="leadership">
+
+<div class="section-title">
+
+<span>OUR LEADERSHIP</span>
+
+<h2>Meet Our Leadership Team</h2>
+
+<p>
+
+Experienced professionals dedicated to delivering
+the highest standards of transport and logistics.
+
+</p>
+
+</div>
+
+<div class="leaders">
+
+<div class="leader-card">
+
+<img src="ceo.jpg" alt="CEO">
+
+<h3>Habyarimana Venuste</h3>
+
+<h4>CEO & Founder</h4>
+
+<p>
+
+Leading HAB Transport Company with vision,
+innovation and commitment to excellent
+customer service throughout Rwanda.
+
+</p>
+
+<div class="socials">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+<div class="leader-card">
+
+<img src="manager.jpg" alt="Manager">
+
+<h3>Lionel Ujeneza Gisubizo</h3>
+
+<h4>Company Manager</h4>
+
+<p>
+
+Responsible for daily operations,
+customer satisfaction and ensuring
+efficient transport services.
+
+</p>
+
+<div class="socials">
+
+<a href="#"><i class="fab fa-facebook-f"></i></a>
+<a href="#"><i class="fab fa-linkedin-in"></i></a>
+<a href="#"><i class="fab fa-instagram"></i></a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= BOOKING ================= -->
+
+<section class="booking section" id="booking">
+
+    <div class="section-title">
+
+        <span>BOOK A TRUCK</span>
+
+        <h2>Request Transport Services</h2>
+
+        <p>
+
+            Complete the booking form below and our
+            team will contact you as soon as possible
+            to confirm your transport request.
+
+        </p>
+
+    </div>
+
+    <div class="booking-container">
+
+        <form id="bookingForm" class="booking-form">
+
+            <div class="input-box">
+
+                <label>Full Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Enter your full name"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Company Name</label>
+
+                <input
+                    type="text"
+                    id="company"
+                    placeholder="Company (Optional)">
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="example@email.com"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Phone Number</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="+250..."
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Pickup Location</label>
+
+                <input
+                    type="text"
+                    id="pickup"
+                    placeholder="Pickup location"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Delivery Destination</label>
+
+                <input
+                    type="text"
+                    id="destination"
+                    placeholder="Delivery destination"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Goods to Transport</label>
+
+                <select id="goods">
+
+                    <option>Food Products</option>
+                    <option>Construction Materials</option>
+                    <option>Furniture</option>
+                    <option>Electronics</option>
+                    <option>Machinery</option>
+                    <option>Agricultural Products</option>
+                    <option>Other</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Select Truck</label>
+
+                <select id="truck">
+
+                    <option>Pickup Truck</option>
+                    <option>3 Ton Truck</option>
+                    <option>5 Ton Truck</option>
+                    <option>10 Ton Truck</option>
+                    <option>Trailer Truck</option>
+                    <option>Refrigerated Truck</option>
+
+                </select>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Estimated Weight (KG)</label>
+
+                <input
+                    type="number"
+                    id="weight"
+                    placeholder="Weight">
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Pickup Date</label>
+
+                <input
+                    type="date"
+                    id="date"
+                    required>
+
+            </div>
+
+            <div class="input-box">
+
+                <label>Pickup Time</label>
+
+                <input
+                    type="time"
+                    id="time"
+                    required>
+
+            </div>
+
+            <div class="input-box full-width">
+
+                <label>Additional Information</label>
+
+                <textarea
+                    id="message"
+                    rows="6"
+                    placeholder="Write any extra information here..."></textarea>
+
+            </div>
+
+            <button
+                type="submit"
+                class="submit-btn">
+
+                <i class="fas fa-paper-plane"></i>
+
+                Request Booking
+
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact section" id="contact">
+
+    <div class="section-title">
+
+        <span>CONTACT US</span>
+
+        <h2>Get In Touch</h2>
+
+        <p>
+
+            Need more information?
+            Contact our team today.
+
+        </p>
+
+    </div>
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+
+            <i class="fas fa-phone-alt"></i>
+
+            <h3>Phone</h3>
+
+            <p>0785441111</p>
+
+            <p>0787784143</p>
+
         </div>
 
-        <div class="partner-card">
-            <img src="vava-tours.png" alt="Vava Tours Company Rwanda">
-            <h3>Vava Tours Company Rwanda</h3>
-            <p>Partnering to deliver professional transport and travel services.</p>
+        <div class="contact-card">
+
+            <i class="fas fa-location-dot"></i>
+
+            <h3>Location</h3>
+
+            <p>Kigali, Rwanda</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <i class="fas fa-envelope"></i>
+
+            <h3>Email</h3>
+
+            <p>Contact us anytime</p>
+
         </div>
 
     </div>
 
 </section>
 
-<section id="leadership" class="leadership">
+<!-- ================= FOOTER ================= -->
 
-    <h2>Leadership Team</h2>
+<footer class="footer">
 
-    <div class="team-grid">
+    <div class="footer-content">
 
-        <div class="team-card">
-            <img src="ceo.jpg" alt="CEO">
+        <div>
 
-            <h3>Habyarimana Venuste</h3>
-            <h4>CEO & Founder</h4>
+            <h2>HAB TRANSPORT COMPANY LTD</h2>
 
             <p>
-                Providing strategic leadership and guiding the long-term growth
-                of HAB Transport Company. He is committed to delivering reliable
-                transport, logistics excellence, customer satisfaction and
-                sustainable business development across Rwanda.
+
+                Reliable transport and logistics
+                solutions across Rwanda.
+
             </p>
 
         </div>
 
-        <div class="team-card">
+        <div>
 
-            <img src="manager.jpg" alt="Manager">
+            <h3>Quick Links</h3>
 
-            <h3>Lionel Ujeneza Gisubizo</h3>
-            <h4>Company Manager</h4>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#fleet">Fleet</a>
+            <a href="#booking">Book a Truck</a>
 
-            <p>
-                Responsible for overseeing daily operations, coordinating
-                logistics activities, managing customer relationships and
-                ensuring efficient service delivery while maintaining the
-                highest operational standards.
-            </p>
+        </div>
+
+        <div>
+
+            <h3>Contact</h3>
+
+            <p>0785441111</p>
+            <p>0787784143</p>
+            <p>Kigali, Rwanda</p>
 
         </div>
 
     </div>
 
-</section>
+    <div class="copyright">
 
-<section id="contact" class="contact">
+        <p>
 
-    <h2>Contact HAB Transport Company</h2>
+            © 2026 HAB Transport Company LTD.
+            All Rights Reserved.
 
-    <p>📍 Kigali, Rwanda</p>
+        </p>
 
-    <p>📞 +250785441111</p>
+    </div>
 
-    <p>📞 +250787784143</p>
-    <p> habtransportcompany@gmail.com </p>
-
-</section>
-
-<footer>
-    <p>&copy; 2026 HAB Transport Company | Kigali, Rwanda</p>
 </footer>
 
-<script>
+<!-- EmailJS -->
 
-function contactUs(){
-    alert("Thank you for choosing HAB Transport Company!");
-}
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-</script>
+<!-- Main JavaScript -->
+
+<script src="script.js"></script>
 
 </body>
 </html>
